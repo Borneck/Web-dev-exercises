@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+
+<div id="bild">
+    <script>
+           // Funktion um ein 0 an das Datum zu hängen
+    function zweiStellen(s) {
+        while (s.toString().length < 2) {
+            s = "0" + s;
+        }
+        return s;
+    }
+            // Funktion zur Aktuellen Datum Ausgabe
+    function aktuellesDatum() {
+        var datum = new Date();
+        var tag = zweiStellen(datum.getDate());
+        var monat = zweiStellen(datum.getMonth() +1);
+        var jahr = zweiStellen(datum.getFullYear());
+        var jetzt = tag  + monat  + jahr;
+        return jetzt;
+        
+   }
+            // Funktion um Datum einzugeben eingabe: z.B.2000.5.11
+    function datumDerEntwicklung(jahr, monat, tag) {
+        var entDatum = new Date(jahr,monat,tag);
+        var entTag = zweiStellen(entDatum.getDate());
+        var entMonat = zweiStellen(entDatum.getMonth() +1);
+        var entJahr = entDatum.getFullYear();
+        var entwicklung = entTag + "." +  entMonat + "." +  entJahr;
+        return entwicklung;
+    }
+    var heute = aktuellesDatum();
+        
+    var damals = datumDerEntwicklung(2015,2,18);
+    var arr=damals.split('.');
+           damals=arr.reverse().join('.');
+    
+    function zweiStellen(s) {
+        
+        while (s.toString().length < 2) {
+            s = "0" + s;
+        }
+        return s;
+    }
+    function rechner () { 
+	var datum = new Date();
+	var tag = zweiStellen(datum.getDate());
+	var monat = zweiStellen(datum.getMonth() + 1);
+	var jahr = datum.getFullYear();	
+	var aktuell = tag + "." + monat + "." + jahr;
+        
+	var datumEntwurf = new Date(damals);
+	var tagEnt = zweiStellen(datumEntwurf.getDate());
+	var monatEnt = zweiStellen(datumEntwurf.getMonth() + 1);
+	var jahrEnt = datumEntwurf.getFullYear();
+	var entwurf = tagEnt + "." + monatEnt + "." + jahrEnt;
+	var diff = parseInt((datumEntwurf - datum) / 1000);
+	var days = parseInt(diff / (60 * 60 * 24));		
+		diff -= (days * 60 * 60 * 24);
+                days *= -1;
+                days = zweiStellen(days);
+	var hours = parseInt(diff / (60 * 60));
+		diff -= (hours * (60 * 60));
+                hours *= -1;
+	var minutes = parseInt(diff / 60);
+		diff -= (minutes * 60);
+                minutes *= -1;
+	var seconds = parseInt(diff);
+		diff -= (seconds);
+                seconds *= -1;
+	setTimeout(500);
+		document.getElementById("bild").innerHTML = "Heute ist der : </br>" + aktuell + "</br>" + "Die Site wurde am " + "</br>" +  tagEnt + "." + monatEnt + "." + jahrEnt +  "</br>" + " erstellt </br>" + "das ist jetzt genau </br>"
+		+ days + " Tage</br>" + hours + " Stunden</br>" + minutes + " Minuten</br>" + " und</br>" + seconds + " Sekunden vergangen";
+	}
+var aktiv = window.setInterval("rechner()", 1000);
+
+    </script>
+  </div> 
+
+</body>
+</html>
