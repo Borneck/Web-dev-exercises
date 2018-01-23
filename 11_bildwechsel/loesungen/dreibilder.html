@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>JavaScript-Beispiel</title>
+  <script>
+  function austauschen(id, quelle) {
+    document.getElementById(id).src = quelle;
+  }
+</script>
+</head>
+<body>
+<img src="bilder/steine1.jpg" id="bild1" 
+onmouseover="austauschen(this.id, 'bilder/steine1_mod.jpg')"
+onmouseout="austauschen(this.id, 'bilder/steine1.jpg')">
+<img src="bilder/steine2.jpg" id="bild2"
+onmouseover="austauschen(this.id, 'bilder/steine2_mod.jpg')"
+onmouseout="austauschen(this.id, 'bilder/steine2.jpg')">
+<img src="bilder/steine3.jpg" id="bild3" 
+onmouseover="austauschen(this.id, 'bilder/steine3_mod.jpg')"
+onmouseout="austauschen(this.id, 'bilder/steine3.jpg')">
+
+</body>
+</html>
+
