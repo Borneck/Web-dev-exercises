@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript-Beispiel</title> 
+</head>
+<body>
+<h2 id="anzeige"></h2>
+<script>
+  function nettoberechnen(wert) {
+    var erg = wert / 1.19;
+    return erg;
+  }
+  var ausgabe = document.getElementById("anzeige");
+  var meinnetto = nettoberechnen(119);
+  ausgabe.innerHTML = meinnetto + " EUR";
+</script>
+</body>
+</html>
+
