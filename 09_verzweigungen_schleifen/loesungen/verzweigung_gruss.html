@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript-Beispiel</title>
+</head>
+<body>
+<p id="ausgabe"></p>
+<script>
+var datum = new Date();
+var stunde = datum.getHours();
+var gruss;
+//stunde = 3;
+if (stunde > 4 && stunde < 12) {
+  gruss = "Guten Morgen";
+}
+else if (stunde >= 12 && stunde < 15){
+  gruss = "Guten Mittag";
+}
+else {
+  gruss = "Guten Tag";
+}
+document.getElementById("ausgabe").innerHTML = gruss;
+</script>
+</body>
+</html>
