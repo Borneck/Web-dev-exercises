@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>  
+<meta charset="utf-8">
+<title>Formularüberprüfung</title>
+<script>
+  function pruefen() {
+    var nachname = document.getElementById("nachname");
+    var ort = document.getElementById("ort");
+    if (nachname.value == "") {
+      alert("Bitte geben Sie Ihren Nachnamen an!");
+      nachname.focus();
+      return false;
+    }
+    if (ort.value == "") {
+      alert("Bitte geben Sie Ihren Wohnort an!");
+      ort.focus();
+      return false;
+    }
+  }
+</script>
+</head>
+<body>
+<form action="" onsubmit="return pruefen()">
+<label for="nachname">Name: </label><br>
+<input type="text" name="nachname" id="nachname" size="20" maxlength="30"><br>
+<label for="ort">Wohnort: </label><br>
+<input type="text" name="ort" id="ort" size="20" maxlength="30"><br>
+<input type="submit" value="Absenden">
+</form>
+</body>
+</html>
